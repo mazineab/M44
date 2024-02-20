@@ -1,11 +1,11 @@
 package com.example.m44.Model;
 
 public class Product {
-    String id,name,categorie;
-    double price,oldPrice,stars;
-    String pathImg;
-    boolean livraion;
-    int buy,remise;
+    public String id,name,categorie;
+    public double price,oldPrice,stars;
+    public String pathImg;
+    public boolean livraion;
+    public int buy,remise;
 
     public Product(String id, String name, String categorie, double price, double oldPrice, int remise, String pathImg, double stars, boolean livraion, int buy) {
         this.id = id;
