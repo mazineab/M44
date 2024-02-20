@@ -2,12 +2,12 @@ package com.example.m44.Model;
 
 public class Product {
     String id,name,categorie;
-    String price,oldPrice,remise;
-    String pathImg,stars;
+    double price,oldPrice,stars;
+    String pathImg;
     boolean livraion;
-    int buy;
+    int buy,remise;
 
-    public Product(String id, String name, String categorie, String price, String oldPrice, String remise, String pathImg, String stars, boolean livraion, int buy) {
+    public Product(String id, String name, String categorie, double price, double oldPrice, int remise, String pathImg, double stars, boolean livraion, int buy) {
         this.id = id;
         this.name = name;
         this.categorie = categorie;
