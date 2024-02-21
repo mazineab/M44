@@ -28,8 +28,33 @@ public class Data {
                     String id=prdObj.getString("id");
                     String name=prdObj.getString("name");
                     String imgSrc=prdObj.getString("img");
-                    String strPrice=prdObj.getString("price").replaceAll("[^\\d.]+","");
-                    String strOldPrice=prdObj.getString("oldPrice").replaceAll("[^\\d.]+","");
+
+                    String strPrice=prdObj.getString("price");
+                    double price = 0.0;
+                    String[] priceParts = strPrice.split(" - ");
+                    String firstPriceStr = priceParts[0].replaceAll("[^\\d.,]+", "").replaceAll(",", "");
+                    try {
+                        price = Double.parseDouble(firstPriceStr);
+                    } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+                        e.printStackTrace();
+                    }
+
+
+                    String strOldPrice=prdObj.getString("oldPrice");
+                    double oldPrice = 0.0;
+                    if(strOldPrice!=null && !strOldPrice.equals("null") && !strOldPrice.isEmpty()) {
+                        String[] oldPriceParts = strOldPrice.split(" - ");
+                        String firstOld = oldPriceParts[0].replaceAll("[^\\d.,0]+", "").replaceAll(",", "");
+                        try {
+                            oldPrice = Double.parseDouble(firstOld);
+                        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else {
+                        oldPrice=0.0;
+                    }
+
                     String strRemise=prdObj.getString("remise").replace("%","");
                     String strStars1="";
                     String strStars=prdObj.getString("stars");
@@ -42,13 +67,9 @@ public class Data {
 
                     String strBuy=prdObj.getString("buy");
                     String strLivrision=prdObj.getString("livrision");
-                    double price=0.0;double oldPrice=0.0;double stars=0.0;int remise=0;int buy=0;boolean livrision=false;
+                    double stars=0.0;int remise=0;int buy=0;boolean livrision=false;
                     try{
-                        price=Double.parseDouble(strPrice);
-                        if(strOldPrice!=null && !strOldPrice.equals("null") && !strOldPrice.isEmpty()){
-                            oldPrice=Double.parseDouble(strOldPrice);
-                        }else
-                            oldPrice=0.0;
+//
                         if(strStars1!=null && !strStars1.equals("null")){
                             stars=Double.parseDouble(strStars1);
                         }

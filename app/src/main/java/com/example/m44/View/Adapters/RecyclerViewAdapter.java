@@ -15,9 +15,11 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<Viewholder> {
     ArrayList<Product> listProducts;
-    public RecyclerViewAdapter(ArrayList<Product> listProducts){
-        listProducts=listProducts;
+
+    public RecyclerViewAdapter(ArrayList<Product> listProducts) {
+        this.listProducts = listProducts;
     }
+
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
