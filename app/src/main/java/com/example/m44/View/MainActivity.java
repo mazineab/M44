@@ -6,6 +6,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.m44.Model.Product;
 import com.example.m44.R;
 import com.example.m44.View.Adapters.RecyclerViewAdapter;
+import com.example.m44.View.Adapters.RecyclerViewAdapterMst;
 import com.example.m44.ViewModel.Viewmodel;
 
 import java.util.ArrayList;
@@ -22,8 +24,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerViewAdapter ad;
+    RecyclerViewAdapterMst adMst;
     RecyclerView rcy,rcyMost;
-    ArrayList<Product> list;
+    ArrayList<Product> list,listPhone;
     Viewmodel viewmodel;
     EditText edSrch;
 
@@ -65,7 +68,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        listPhone=new ArrayList<>();
+        adMst=new RecyclerViewAdapterMst(listPhone);
+        GridLayoutManager lytMMst=new GridLayoutManager(this,3);
+        rcyMost.setHasFixedSize(true);
+        rcyMost.setLayoutManager(lytMMst);
+        rcyMost.setAdapter(adMst);
+        viewmodel.getPhones();
+        viewmodel.getProdusPhones().observe(MainActivity.this, new Observer<ArrayList<Product>>() {
+            @Override
+            public void onChanged(ArrayList<Product> products) {
+                listPhone.addAll(products);
+            }
+        });
 
 
 
