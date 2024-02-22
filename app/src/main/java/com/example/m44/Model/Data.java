@@ -69,7 +69,6 @@ public class Data {
                     String strLivrision=prdObj.getString("livrision");
                     double stars=0.0;int remise=0;int buy=0;boolean livrision=false;
                     try{
-//
                         if(strStars1!=null && !strStars1.equals("null")){
                             stars=Double.parseDouble(strStars1);
                         }

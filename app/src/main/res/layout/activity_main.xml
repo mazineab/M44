@@ -6,12 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".View.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcy"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="150dp"
+        android:background="#1B3C73"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edSrch"
+        android:layout_width="333dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/shap_edittext"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="Phone"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="19dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edSrch">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/sldr1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_auto_cycle="true"
+            app:iss_delay="2000"
+            app:iss_period="2000" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy"
+        android:layout_width="381dp"
+        android:layout_height="290dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
