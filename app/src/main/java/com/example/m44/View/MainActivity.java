@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerViewAdapter ad;
-    RecyclerView rcy;
+    RecyclerView rcy,rcyMost;
     ArrayList<Product> list;
     Viewmodel viewmodel;
     EditText edSrch;
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         edSrch=findViewById(R.id.edSrch);
+        rcyMost=findViewById(R.id.rcyMost);
 
         ImageSlider imgSldr=findViewById(R.id.sldr1);
         ArrayList<SlideModel> slids=new ArrayList<>();
@@ -63,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 list.addAll(products);
             }
         });
+
+
+
+
 
 
     }

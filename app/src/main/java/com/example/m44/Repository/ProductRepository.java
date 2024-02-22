@@ -16,9 +16,14 @@ public class ProductRepository {
         data=new Data();
     }
 
+
     public ArrayList<Product> getProducts(){
         ArrayList<Product> listPrd=new ArrayList<>(data.getJsonData(contextt));
         return listPrd;
+    }
+
+    public ArrayList<Product> getProdutsPhones(){
+        return data.getProductsPhone();
     }
     
 }

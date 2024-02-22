@@ -12,8 +12,44 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Data {
+    public ArrayList<Product> productsPhone=new ArrayList<>();
+    public ArrayList<Product> productsAccessoriesMen=new ArrayList<>();
+    public ArrayList<Product> productsTelevesion=new ArrayList<>();
+    public ArrayList<Product> productsLaptop=new ArrayList<>();
+    public ArrayList<Product> productsDecoration=new ArrayList<>();
+    public ArrayList<Product> productsWomensClothes=new ArrayList<>();
+    public ArrayList<Product> productsMensClothes=new ArrayList<>();
+    public ArrayList<Product> productsShoes=new ArrayList<>();
+    public ArrayList<Product> productsaccessories=new ArrayList<>();
     public Data(){
 
+    }
+    public ArrayList<Product> getProductsPhone(){
+        return productsPhone;
+    }
+    public ArrayList<Product> getProductsTelevesion(){
+        return productsTelevesion;
+    }
+    public ArrayList<Product> getProductsLaptop(){
+        return productsLaptop;
+    }
+    public ArrayList<Product> getProductsDecoration(){
+        return productsDecoration;
+    }
+    public ArrayList<Product> getProductsWomensClothes(){
+        return productsWomensClothes;
+    }
+    public ArrayList<Product> getProductsAccessoriesMen(){
+        return productsAccessoriesMen;
+    }
+    public ArrayList<Product> getProductsShoes(){
+        return productsShoes;
+    }
+    public ArrayList<Product> getProductsMensClothes(){
+        return productsMensClothes;
+    }
+    public ArrayList<Product> getProductsaccessories(){
+        return productsaccessories;
     }
     public ArrayList<Product> getJsonData(Context context){
         ArrayList<Product> products=new ArrayList<>();
@@ -107,6 +143,38 @@ public class Data {
         else{
             Product prd=new Product("img","name","categorie",20.0,10.0,4,"img",4.5,true,100);
             products.add(prd);
+        }
+
+        for(Product prd:products){
+            switch (prd.categorie){
+                case "Phone":
+                    productsPhone.add(prd);
+                    break;
+                case "Televesion":
+                    productsTelevesion.add(prd);
+                    break;
+                case "Laptop":
+                    productsLaptop.add(prd);
+                    break;
+                case "Decoration":
+                    productsDecoration.add(prd);
+                    break;
+                case "Women's Clothes.":
+                    productsWomensClothes.add(prd);
+                    break;
+                case "Men's Clothes.":
+                    productsMensClothes.add(prd);
+                    break;
+                case "Shoes":
+                    productsShoes.add(prd);
+                    break;
+                case "accessories":
+                    productsaccessories.add(prd);
+                    break;
+                case "Accessories Men":
+                    productsAccessoriesMen.add(prd);
+                    break;
+            }
         }
         return products;
 

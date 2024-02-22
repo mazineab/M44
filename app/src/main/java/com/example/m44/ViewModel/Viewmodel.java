@@ -22,4 +22,11 @@ public class Viewmodel extends ViewModel {
     public LiveData<ArrayList<Product>> getProducts(){
         return getPrd;
     }
+
+    public void getPhones(){
+        getPrd.setValue(repository.getProdutsPhones());
+    }
+    public LiveData<ArrayList<Product>> getProdusPhones(){
+        return getPrd;
+    }
 }
