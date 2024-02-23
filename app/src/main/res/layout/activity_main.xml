@@ -4,31 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".View.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#FC6736"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edSrch"
-        android:layout_width="333dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/shap_edittext"
-        android:drawableStart="@drawable/search"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="Phone"
-        android:inputType="text"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imgBrnd"
+        android:layout_width="100dp"
+        android:layout_height="84dp"
+        android:src="@drawable/sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,11 +20,11 @@
         android:id="@+id/cardView"
         android:layout_width="280dp"
         android:layout_height="150dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="8dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edSrch">
+        app:layout_constraintTop_toBottomOf="@+id/imgBrnd">
 
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/sldr1"
@@ -56,13 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

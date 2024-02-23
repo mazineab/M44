@@ -29,11 +29,10 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh
     @NonNull
     @Override
     public ViewHolderCh onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        boolean isHorizontal=ParentAdapter.parent.isHorizontal;
-        boolean isHorizontal=true;
+        boolean isHorizontal=ParentAdapter.parent.isHorizontal;
         View view;
         if(!isHorizontal){
-            view= LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_vrt,null,false);
+            view= LayoutInflater.from(parent.getContext()).inflate(R.layout.product_vrt,null,false);
         }
         else{
             view= LayoutInflater.from(parent.getContext()).inflate(R.layout.product_horizontal,null,false);
@@ -46,8 +45,8 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh
         Child child=listChild.get(position);
         Picasso.get().load(child.image).into(holder.img);
         holder.name.setText(child.name);
-        holder.prc.setText(child.price);
-        holder.oldPrc.setText(child.price);
+        holder.prc.setText(child.price+"DH");
+        holder.oldPrc.setText(child.price+"DH");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,7 +1,6 @@
 package com.example.m44.View;
 
 import android.os.Bundle;
-import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     ParentAdapter adNstd;
     RecyclerView rcy;
     Viewmodel viewmodel;
-    EditText edSrch;
     ArrayList<Parent> listParents;
     ArrayList<Child> lisChild1,listChild2,listAllPrd;
 
@@ -34,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        edSrch=findViewById(R.id.edSrch);
         listParents=new ArrayList<>();
         lisChild1=new ArrayList<>();
         listChild2=new ArrayList<>();
