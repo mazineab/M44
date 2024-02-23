@@ -54,7 +54,7 @@
         <TextView
             android:id="@+id/nameHz"
             android:layout_width="105dp"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
             android:layout_marginTop="13dp"
             android:text="ATAR VESION Lunettes de soleil Unisexe polarized Protection UV400"
             android:textAlignment="center"
