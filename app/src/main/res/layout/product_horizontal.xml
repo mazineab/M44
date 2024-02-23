@@ -2,54 +2,67 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="200dp"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgHz2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@tools:sample/avatars"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cnst1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/prcHZ1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="150dh"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgHz2" />
+        <ImageView
+            android:id="@+id/imgHz2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="@+id/cnst1"
+            app:layout_constraintTop_toTopOf="@+id/cnst1" />
 
-    <TextView
-        android:id="@+id/oldPrcHz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#F90716"
-        android:text="200dh"
-        app:layout_constraintEnd_toEndOf="@+id/imgHz2"
-        app:layout_constraintTop_toBottomOf="@+id/imgHz2" />
+        <TextView
+            android:id="@+id/prcHZ1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="20000.0DH"
+            app:layout_constraintStart_toStartOf="@+id/cnst1"
+            app:layout_constraintTop_toBottomOf="@+id/imgHz2" />
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_gravity="bottom"
-        android:background="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/oldPrcHz"
-        app:layout_constraintEnd_toEndOf="@+id/oldPrcHz"
-        app:layout_constraintStart_toStartOf="@+id/oldPrcHz"
-        app:layout_constraintTop_toTopOf="@+id/oldPrcHz" />
+        <TextView
+            android:id="@+id/oldPrcHz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="300000DH"
+            android:textColor="#F90716"
+            app:layout_constraintEnd_toEndOf="@+id/cnst1"
+            app:layout_constraintTop_toBottomOf="@+id/imgHz2" />
 
-    <TextView
-        android:id="@+id/nameHz"
-        android:layout_width="105dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="13dp"
-        android:text="ATAR VESION Lunettes de soleil Unisexe polarized Protection UV400"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prcHZ1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/oldPrcHz"
+            app:layout_constraintEnd_toEndOf="@+id/oldPrcHz"
+            app:layout_constraintStart_toStartOf="@+id/oldPrcHz"
+            app:layout_constraintTop_toTopOf="@+id/oldPrcHz" />
+
+        <TextView
+            android:id="@+id/nameHz"
+            android:layout_width="105dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:text="ATAR VESION Lunettes de soleil Unisexe polarized Protection UV400"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/cnst1"
+            app:layout_constraintStart_toStartOf="@+id/cnst1"
+            app:layout_constraintTop_toBottomOf="@+id/prcHZ1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
