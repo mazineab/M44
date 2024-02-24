@@ -1,6 +1,8 @@
 package com.example.m44.View;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
+    EditText edSrch;
     ParentAdapter adNstd;
     RecyclerView rcy;
     Viewmodel viewmodel;
@@ -29,25 +32,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        edSrch=findViewById(R.id.edSrch);
         listParents=new ArrayList<>();
         lisChild1=new ArrayList<>();
         listChild2=new ArrayList<>();
         listAllPrd=new ArrayList<>();
         rcy=findViewById(R.id.rcy);
-
-
-//        ImageSlider imgSldr=findViewById(R.id.sldr1);
-//        ArrayList<SlideModel> slids=new ArrayList<>();
-//        slids.add(new SlideModel(R.drawable.im1, ScaleTypes.FIT));
-//        slids.add(new SlideModel(R.drawable.im2, ScaleTypes.FIT));
-//        slids.add(new SlideModel(R.drawable.im3, ScaleTypes.FIT));
-//        slids.add(new SlideModel(R.drawable.im4, ScaleTypes.FIT));
-//        slids.add(new SlideModel(R.drawable.im5, ScaleTypes.FIT));
-//        slids.add(new SlideModel(R.drawable.im6, ScaleTypes.FIT));
-//        slids.add(new SlideModel(R.drawable.im7, ScaleTypes.FIT));
-//        imgSldr.setImageList(slids,ScaleTypes.FIT);
-
-
+        edSrch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edSrch.requestFocus();
+            }
+        });
 
 
         viewmodel=new ViewModelProvider(MainActivity.this).get(Viewmodel.class);

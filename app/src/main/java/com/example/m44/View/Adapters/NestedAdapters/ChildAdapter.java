@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.m44.Model.NestedsClass.Child;
 import com.example.m44.R;
-import com.example.m44.View.MainActivity2;
+import com.example.m44.View.ProductDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, MainActivity2.class);
+                Intent intent=new Intent(context, ProductDetails.class);
                 context.startActivity(intent);
             }
         });

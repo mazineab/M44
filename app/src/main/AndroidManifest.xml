@@ -18,7 +18,7 @@
             android:name=".View.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".View.MainActivity2"
+            android:name=".View.ProductDetails"
             android:exported="false" />
         <activity
             android:name=".View.Spleach"
