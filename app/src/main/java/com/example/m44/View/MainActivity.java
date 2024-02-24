@@ -8,9 +8,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.m44.Model.NestedsClass.Child;
 import com.example.m44.Model.NestedsClass.Parent;
 import com.example.m44.Model.Product;
@@ -39,16 +36,16 @@ public class MainActivity extends AppCompatActivity {
         rcy=findViewById(R.id.rcy);
 
 
-        ImageSlider imgSldr=findViewById(R.id.sldr1);
-        ArrayList<SlideModel> slids=new ArrayList<>();
-        slids.add(new SlideModel(R.drawable.im1, ScaleTypes.FIT));
-        slids.add(new SlideModel(R.drawable.im2, ScaleTypes.FIT));
-        slids.add(new SlideModel(R.drawable.im3, ScaleTypes.FIT));
-        slids.add(new SlideModel(R.drawable.im4, ScaleTypes.FIT));
-        slids.add(new SlideModel(R.drawable.im5, ScaleTypes.FIT));
-        slids.add(new SlideModel(R.drawable.im6, ScaleTypes.FIT));
-        slids.add(new SlideModel(R.drawable.im7, ScaleTypes.FIT));
-        imgSldr.setImageList(slids,ScaleTypes.FIT);
+//        ImageSlider imgSldr=findViewById(R.id.sldr1);
+//        ArrayList<SlideModel> slids=new ArrayList<>();
+//        slids.add(new SlideModel(R.drawable.im1, ScaleTypes.FIT));
+//        slids.add(new SlideModel(R.drawable.im2, ScaleTypes.FIT));
+//        slids.add(new SlideModel(R.drawable.im3, ScaleTypes.FIT));
+//        slids.add(new SlideModel(R.drawable.im4, ScaleTypes.FIT));
+//        slids.add(new SlideModel(R.drawable.im5, ScaleTypes.FIT));
+//        slids.add(new SlideModel(R.drawable.im6, ScaleTypes.FIT));
+//        slids.add(new SlideModel(R.drawable.im7, ScaleTypes.FIT));
+//        imgSldr.setImageList(slids,ScaleTypes.FIT);
 
 
 

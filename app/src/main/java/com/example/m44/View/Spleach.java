@@ -21,6 +21,6 @@ public class Spleach extends AppCompatActivity {
                 Spleach.this.startActivity(intent);
                 finish();
             }
-        },4000);
+        },2000);
     }
 }

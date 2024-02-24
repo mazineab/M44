@@ -7,13 +7,13 @@
     android:background="@color/white"
     tools:context=".View.Spleach">
 
-    <pl.droidsonroids.gif.GifImageView
+    <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_marginTop="111dp"
+        android:layout_width="298dp"
+        android:layout_height="344dp"
+        android:layout_marginTop="151dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/sp" />
+        app:srcCompat="@drawable/brand" />
 </androidx.constraintlayout.widget.ConstraintLayout>
