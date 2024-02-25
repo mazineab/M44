@@ -8,7 +8,7 @@
     tools:context=".View.ProductDetails">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imgPrd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -21,19 +21,19 @@
         android:layout_weight="1">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/favPrd"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="7dp"
             android:backgroundTint="#00FFFFFF"
-            android:src="@drawable/fav_clr"
+            android:src="@drawable/fav"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/NamePrd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -41,13 +41,13 @@
             android:text="Samsung Galaxy A04 - 6.5\&quot; - 4GB RAM + 64GB ROM - 50MP - Black"
             android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintEnd_toStartOf="@+id/favPrd"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/catPrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -56,21 +56,19 @@
             android:textColor="#D7454545"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/NamePrd" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/stPrd"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
-            android:src="@tools:sample/avatars"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:srcCompat="@drawable/stars" />
+            app:layout_constraintTop_toBottomOf="@+id/catPrd" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/starsPrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -78,22 +76,22 @@
             android:text="4.5"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintStart_toEndOf="@+id/stPrd"
+            app:layout_constraintTop_toBottomOf="@+id/catPrd" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/buyPrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="(130 Buy)"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
-            app:layout_constraintStart_toEndOf="@+id/textView5" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/starsPrd"
+            app:layout_constraintStart_toEndOf="@+id/starsPrd" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/prcPrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
@@ -101,18 +99,18 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+            app:layout_constraintBaseline_toBaselineOf="@+id/catPrd"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/oldPrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="300000 DH"
             android:textColor="#F10606"
             android:textSize="16sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
-            app:layout_constraintEnd_toEndOf="@+id/textView7" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/buyPrd"
+            app:layout_constraintEnd_toEndOf="@+id/prcPrd" />
 
         <TextView
             android:id="@+id/textView10"
@@ -122,21 +120,21 @@
             android:text="Shipping : "
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintStart_toStartOf="@+id/stPrd"
+            app:layout_constraintTop_toBottomOf="@+id/starsPrd" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_gravity="bottom"
             android:background="#000000"
-            app:layout_constraintBottom_toBottomOf="@+id/textView9"
-            app:layout_constraintEnd_toEndOf="@+id/textView9"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toTopOf="@+id/textView9" />
+            app:layout_constraintBottom_toBottomOf="@+id/oldPrd"
+            app:layout_constraintEnd_toEndOf="@+id/oldPrd"
+            app:layout_constraintStart_toStartOf="@+id/oldPrd"
+            app:layout_constraintTop_toTopOf="@+id/oldPrd" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/AddCart"
             android:layout_width="250dp"
             android:layout_height="69dp"
             android:layout_marginTop="39dp"
@@ -152,7 +150,7 @@
             tools:textColor="#FFFFFF" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/shpPrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Free"

@@ -13,15 +13,16 @@ import java.util.ArrayList;
 
 public class Viewmodel extends ViewModel {
     ProductRepository repository;
+    MutableLiveData<ArrayList<Product>> getAllPrd=new MutableLiveData<>();
     MutableLiveData<ArrayList<Product>> getPrd=new MutableLiveData<>();
     MutableLiveData<ArrayList<Product>> getCloth=new MutableLiveData<>();
     public void Add(Context context) {
         repository=new ProductRepository(context);
         ArrayList<Product> listProducts=new ArrayList<>(repository.getProducts());
-        getPrd.setValue(listProducts);
+        getAllPrd.setValue(listProducts);
     }
     public LiveData<ArrayList<Product>> getProducts(){
-        return getPrd;
+        return getAllPrd;
     }
 
     public void getPhones(){

@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.m44.Model.NestedsClass.Child;
 import com.example.m44.Model.NestedsClass.Parent;
 import com.example.m44.Model.Product;
 import com.example.m44.R;
@@ -25,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
     ParentAdapter adNstd;
     RecyclerView rcy;
     Viewmodel viewmodel;
+    static ArrayList<Product> listProduts;
     ArrayList<Parent> listParents;
-    ArrayList<Child> lisChild1,listChild2,listAllPrd;
+    ArrayList<Product> lisChild1,listChild2,listAllPrd;
+    public static Product selectedProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         lisChild1=new ArrayList<>();
         listChild2=new ArrayList<>();
         listAllPrd=new ArrayList<>();
+        listProduts=new ArrayList<>();
         rcy=findViewById(R.id.rcy);
         edSrch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,21 +51,38 @@ public class MainActivity extends AppCompatActivity {
         viewmodel=new ViewModelProvider(MainActivity.this).get(Viewmodel.class);
 
         viewmodel.Add(MainActivity.this);
+
         viewmodel.getProducts().observe(MainActivity.this, new Observer<ArrayList<Product>>() {
             @Override
             public void onChanged(ArrayList<Product> products) {
-                for(Product prd:products){
-                    listAllPrd.add(new Child(prd.name,String.valueOf(prd.price),String.valueOf(prd.oldPrice),prd.pathImg));
-                }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listAllPrd.addAll(products);
+                    }
+                }).start();
             }
         });
+
+
+        adNstd=new ParentAdapter(listParents,MainActivity.this);
+        LinearLayoutManager lytM=new LinearLayoutManager(MainActivity.this);
+        rcy.setLayoutManager(lytM);
+        rcy.setAdapter(adNstd);
+
+
+
         viewmodel.getClothMen();
         viewmodel.getProductsClothMens().observe(MainActivity.this, new Observer<ArrayList<Product>>() {
             @Override
             public void onChanged(ArrayList<Product> products) {
-                for(Product prd:products){
-                    lisChild1.add(new Child(prd.name,String.valueOf(prd.price),String.valueOf(prd.oldPrice),prd.pathImg));
-                }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        lisChild1.addAll(products);
+                    }
+                }).start();
+
             }
         });
         listParents.add(new Parent("Most Populaire","View All",lisChild1));
@@ -72,9 +91,13 @@ public class MainActivity extends AppCompatActivity {
         viewmodel.getProdusPhones().observe(MainActivity.this, new Observer<ArrayList<Product>>() {
             @Override
             public void onChanged(ArrayList<Product> products) {
-                for(Product prd:products){
-                    listChild2.add(new Child(prd.name,String.valueOf(prd.price),String.valueOf(prd.oldPrice),prd.pathImg));
-                }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listChild2.addAll(products);
+                    }
+                }).start();
+
             }
         });
         listParents.add(new Parent("Thrends Of Week","View All",listChild2));
@@ -82,29 +105,18 @@ public class MainActivity extends AppCompatActivity {
 
         listParents.add(new Parent(listAllPrd,false));
 
-        adNstd=new ParentAdapter(listParents,MainActivity.this);
-        LinearLayoutManager lytM=new LinearLayoutManager(this);
-        rcy.setLayoutManager(lytM);
-        rcy.setAdapter(adNstd);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
+//    public static Product getClickedProduct(String id){
+//        Product product = new Product();
+//        for(Product prd:listProduts){
+//            if(prd.id.equals(id)){
+//                product=prd;
+//                break;
+//            }
+//        }
+//        return product;
+//    }
 
 
 }

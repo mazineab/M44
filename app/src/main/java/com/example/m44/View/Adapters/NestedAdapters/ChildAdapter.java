@@ -11,18 +11,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.m44.Model.NestedsClass.Child;
+import com.example.m44.Model.Product;
 import com.example.m44.R;
+import com.example.m44.View.MainActivity;
 import com.example.m44.View.ProductDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh> {
-    ArrayList<Child> listChild;
+    ArrayList<Product> listChild;
     Context context;
 
-    public ChildAdapter(ArrayList<Child> listChild, Context context) {
+    public ChildAdapter(ArrayList<Product> listChild, Context context) {
         this.listChild = listChild;
         this.context = context;
     }
@@ -42,15 +43,18 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderCh holder, int position) {
-        Child child=listChild.get(position);
-        Picasso.get().load(child.image).into(holder.img);
+        Product child=listChild.get(position);
+        String id=child.id;
+        Picasso.get().load(child.pathImg).into(holder.img);
         holder.name.setText(child.name);
         holder.prc.setText(child.price+"DH");
-        holder.oldPrc.setText(child.price+"DH");
+        holder.oldPrc.setText(child.oldPrice+"DH");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                MainActivity.getClickedProduct(id);
                 Intent intent=new Intent(context, ProductDetails.class);
+                intent.putExtra("product",MainActivity.selectedProduct);
                 context.startActivity(intent);
             }
         });
