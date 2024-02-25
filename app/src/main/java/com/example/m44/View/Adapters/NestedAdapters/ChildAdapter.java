@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.m44.Model.Product;
 import com.example.m44.R;
-import com.example.m44.View.MainActivity;
 import com.example.m44.View.ProductDetails;
 import com.squareup.picasso.Picasso;
 
@@ -44,7 +43,6 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh
     @Override
     public void onBindViewHolder(@NonNull ViewHolderCh holder, int position) {
         Product child=listChild.get(position);
-        String id=child.id;
         Picasso.get().load(child.pathImg).into(holder.img);
         holder.name.setText(child.name);
         holder.prc.setText(child.price+"DH");
@@ -52,9 +50,9 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolderCh
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                MainActivity.getClickedProduct(id);
+
                 Intent intent=new Intent(context, ProductDetails.class);
-                intent.putExtra("product",MainActivity.selectedProduct);
+                intent.putExtra("product",listChild.get(position));
                 context.startActivity(intent);
             }
         });

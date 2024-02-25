@@ -16,6 +16,7 @@ public class Viewmodel extends ViewModel {
     MutableLiveData<ArrayList<Product>> getAllPrd=new MutableLiveData<>();
     MutableLiveData<ArrayList<Product>> getPrd=new MutableLiveData<>();
     MutableLiveData<ArrayList<Product>> getCloth=new MutableLiveData<>();
+    MutableLiveData<ArrayList<Product>> getClothW=new MutableLiveData<>();
     public void Add(Context context) {
         repository=new ProductRepository(context);
         ArrayList<Product> listProducts=new ArrayList<>(repository.getProducts());
@@ -38,5 +39,11 @@ public class Viewmodel extends ViewModel {
 
     public LiveData<ArrayList<Product>> getProductsClothMens(){
         return getCloth;
+    }
+
+    public void getClothWomen(){getClothW.setValue(repository.getProductsCloteWomen());}
+
+    public LiveData<ArrayList<Product>> getProductsClothWomens(){
+        return getClothW;
     }
 }

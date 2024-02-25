@@ -51,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         viewmodel=new ViewModelProvider(MainActivity.this).get(Viewmodel.class);
 
         viewmodel.Add(MainActivity.this);
+        viewmodel.getClothWomen();
 
-        viewmodel.getProducts().observe(MainActivity.this, new Observer<ArrayList<Product>>() {
+        viewmodel.getProductsClothWomens().observe(MainActivity.this, new Observer<ArrayList<Product>>() {
             @Override
             public void onChanged(ArrayList<Product> products) {
                 new Thread(new Runnable() {

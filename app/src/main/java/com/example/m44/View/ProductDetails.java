@@ -2,6 +2,7 @@ package com.example.m44.View;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -37,6 +38,13 @@ public class ProductDetails extends AppCompatActivity {
         shpPrd=findViewById(R.id.shpPrd);
         btnAdd=findViewById(R.id.AddCart);
 
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fav.setImageResource(R.drawable.fav_clr);
+            }
+        });
+
 
 
         Intent intent = getIntent();
@@ -58,7 +66,10 @@ public class ProductDetails extends AppCompatActivity {
         if(oldPrice!=0.0){
             oldPrd.setText(oldPrice+" DH");
         }
-        oldPrd.setText("");
+        else{
+            oldPrd.setText("");
+        }
+
 
         if(buy!=0){
             buyPrd.setText("(buy)");
@@ -70,14 +81,14 @@ public class ProductDetails extends AppCompatActivity {
         else{
             Random rd=new Random();
             int pay = rd.nextInt(21) + 10;
-            shpPrd.setText(pay+" ");
+            shpPrd.setText(pay+" DH");
         }
         if(stars!=0.0){
             stPrd.setImageResource(R.drawable.stars);
             starsPrd.setText(stars+"");
         }
         else{
-            starsPrd.setText(stars+"");
+            starsPrd.setText("");
         }
         if(favr){
             fav.setImageResource(R.drawable.fav_clr);

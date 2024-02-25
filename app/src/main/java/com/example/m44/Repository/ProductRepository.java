@@ -29,5 +29,7 @@ public class ProductRepository {
     public ArrayList<Product> getProductsClotheMen(){
         return data.productsMensClothes;
     }
+
+    public ArrayList<Product> getProductsCloteWomen(){return data.productsWomensClothes;}
     
 }
